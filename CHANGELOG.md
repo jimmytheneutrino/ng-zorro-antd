@@ -1,3 +1,13 @@
+## [7.1.1-alpha.0](https://github.com/jimmytheneutrino/ng-zorro-antd/compare/7.1.0...7.1.1-alpha.0) (2019-03-24)
+
+
+### Bug Fixes
+
+* **date-picker:** make keyboard navigation possible ([e99b045](https://github.com/jimmytheneutrino/ng-zorro-antd/commit/e99b045))
+* **time-picker:** make keyboard navigation possible ([a2988b3](https://github.com/jimmytheneutrino/ng-zorro-antd/commit/a2988b3))
+
+
+
 # [7.1.0](https://github.com/NG-ZORRO/ng-zorro-antd/compare/7.0.3...7.1.0) (2019-03-21)
 
 
@@ -1066,5 +1076,3 @@ And the default value of "nzShowExpand" has changed to "true".
 
 <a name="0.5.0-rc.0"></a>
 # 0.5.0-rc.0 (2017-08-15)
-
-

@@ -28,7 +28,7 @@ log.info('Starting publishing process...');
 
 let nextVersion;
 
-fetchOlderVersions();
+//fetchOlderVersions();
 changeVersion();
 generatingPublishNote();
 preRelease();
