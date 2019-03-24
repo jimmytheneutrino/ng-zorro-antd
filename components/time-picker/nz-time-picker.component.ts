@@ -133,6 +133,7 @@ export class NzTimePickerComponent implements ControlValueAccessor, OnInit, Afte
   close(): void {
     this.nzOpen = false;
     this.nzOpenChange.emit(this.nzOpen);
+    this.focus();
   }
 
   updateAutoFocus(): void {

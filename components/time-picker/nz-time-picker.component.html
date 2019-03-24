@@ -6,6 +6,7 @@
   [(ngModel)]="value"
   readonly="readonly"
   (click)="open()"
+  (keyup.enter)="open()"
   #inputElement>
 <span class="ant-time-picker-icon">
   <i nz-icon type="clock-circle"></i>
@@ -49,7 +50,9 @@
     [opened]="nzOpen"
     [nzClearText]="nzClearText"
     [nzAllowEmpty]="nzAllowEmpty"
+    (keyup.enter)="close()"
     [(ngModel)]="value">
   </nz-time-picker-panel>
+  <span tabindex=0 (focus)="close()" class="nz-tab-catching-span"></span>
 </ng-template>
 
