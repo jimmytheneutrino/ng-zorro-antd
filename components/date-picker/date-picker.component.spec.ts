@@ -9,7 +9,7 @@ import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import isSameDay from 'date-fns/is_same_day';
 
-import { dispatchKeyboardEvent, dispatchMouseEvent } from '../core/testing';
+import { dispatchFakeEvent, dispatchKeyboardEvent, dispatchMouseEvent } from '../core/testing';
 import { NGStyleInterface } from '../core/types/ng-class';
 import en_US from '../i18n/languages/en_US';
 import { NzI18nModule } from '../i18n/nz-i18n.module';
@@ -110,6 +110,24 @@ describe('NzDatePickerComponent', () => {
       tick(500);
       fixture.detectChanges();
       expect(getPickerContainer()).not.toBeNull();
+    }));
+
+    it('should be tabbable back to trigger wrapper', fakeAsync(() => {
+      fixture.detectChanges();
+      dispatchMouseEvent(getPickerTriggerWrapper(), 'click');
+      fixture.detectChanges();
+      tick(500);
+      fixture.detectChanges();
+      expect(getPickerContainer()).not.toBeNull();
+
+      // It is impossible to simulate actual TAB behaviour using events.
+      // This is the next best thing.
+      dispatchFakeEvent(queryFromOverlay('span.nz-tab-catching-span'), 'focus');
+      fixture.detectChanges();
+      tick(500);
+      fixture.detectChanges();
+      expect(getPickerContainer()).toBeNull();
+      expect(document.activeElement).toEqual(getPickerTrigger());
     }));
 
     it('should support nzAllowClear and work properly', fakeAsync(() => {

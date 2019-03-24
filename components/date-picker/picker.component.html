@@ -5,6 +5,7 @@
   [ngStyle]="style"
   tabindex="0"
   (click)="onClickInputBox()"
+  (keyup.enter)="onClickInputBox()"
 >
   <!-- Content of single picker -->
   <ng-container *ngIf="!isRange">
@@ -89,4 +90,5 @@
   > <!-- Compatible for overlay that not support offset dynamically and immediately -->
     <ng-content></ng-content>
   </div>
+  <span tabindex=0 (focus)="onClickBackdrop()" class="nz-tab-catching-span"></span>
 </ng-template>
